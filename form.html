@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,7 +7,7 @@
 </head>
 <body>
     <div class="form-container">
-        <form name="my-form" netlify id="mcq-form">
+        <form id="my-form">
           <div class="question">
             <p>Question 1: What is your favorite color?</p>
             <label>
@@ -38,37 +39,58 @@
             </label>
           </div>
           <div id="result"></div>
+          <button type="submit">Submit</button>
         </form>
       </div>
       <script>
-// Get all radio buttons in the form
-const radioButtons = document.querySelectorAll('input[type=radio]');
+        // Get all radio buttons in the form
+        const radioButtons = document.querySelectorAll('input[type=radio]');
 
-// Add event listener to each radio button
-radioButtons.forEach(radioButton => {
-  radioButton.addEventListener('change', () => {
-    // Get the category of the selected option
-    const category = radioButton.getAttribute('data-category');
+        // Add event listener to each radio button
+        radioButtons.forEach(radioButton => {
+          radioButton.addEventListener('change', () => {
+            // Get the category of the selected option
+            const category = radioButton.getAttribute('data-category');
 
-    // Get all selected options in the form
-    const selectedOptions = document.querySelectorAll('input[type=radio]:checked');
+            // Get all selected options in the form
+            const selectedOptions = document.querySelectorAll('input[type=radio]:checked');
 
-    // Count the number of selected options for each category
-    const categoryCounts = {
-      'Category 1': 0,
-      'Category 2': 0,
-      'Category 3': 0
-    };
-    selectedOptions.forEach(selectedOption => {
-      const optionCategory = selectedOption.getAttribute('data-category');
-      categoryCounts[optionCategory]++;
-    });
+            // Count the number of selected options for each category
+            const categoryCounts = {
+              'Category 1': 0,
+              'Category 2': 0,
+              'Category 3': 0
+            };
+            selectedOptions.forEach(selectedOption => {
+              const optionCategory = selectedOption.getAttribute('data-category');
+              categoryCounts[optionCategory]++;
+            });
 
-    // Update the result display with the category counts
-    const resultElement = document.getElementById('result');
-    resultElement.innerHTML = `Category 1: ${categoryCounts['Category 1']} | Category 2: ${categoryCounts['Category 2']} | Category 3: ${categoryCounts['Category 3']}`;
-  });
-});
+            // Update the result display with the category counts
+            const resultElement = document.getElementById('result');
+            resultElement.innerHTML = `Category 1: ${categoryCounts['Category 1']} | Category 2: ${categoryCounts['Category 2']} | Category 3: ${categoryCounts['Category 3']}`;
+          });
+        });
+
+        // Submit handler function
+        function submitHandler(event) {
+          event.preventDefault();
+
+          const form = document.getElementById('my-form');
+          const formData = new FormData(form);
+
+          fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+          })
+            .then(() => console.log('Form successfully submitted'))
+            .catch((error) => alert(error));
+        }
+
+        // Add submit handler to the form
+        const form = document.getElementById('my-form');
+        form.addEventListener('submit', submitHandler);
       </script>
 </body>
 </html>
