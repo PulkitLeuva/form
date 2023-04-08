@@ -7,35 +7,485 @@
 </head>
 <body>
     <div class="form-container">
+      <h1>Health Assessments and Prakriti Questionnaire</h1>
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id = "name" name="Name"><br>
+      <p>Sex</p>
+      <label>
+        <input type="radio" name = "male" value="Male">
+        Male
+      </label>
+      <label>
+        <input type="radio" name = "female" value="Female">
+        Female
+      </label>
+      <p>Birth Date (DD/MM/YYYY)</p>
+      <label>
+      <input type="text" name = "Birthdate">
+      </label>
+      <p>Age (in years)</p>
+      <label>
+      <input type="text" name = "Age">
+      </label>
+      <p>Department Name</p>
+      <label>
+      <input type="text" name = "Department Name">
+      </label>
+      <p>Year</p>
+      <label>
+      <input type="text" name = "Year">
+      </label>
+      <p>Mobile Number</p>
+      <label>
+      <input type="text" name = "Mobile Number">
+      </label>
+      <p>Email ID</p>
+      <label>
+      <input type="text" name = "Email ID">
+      </label>
+      <p>Adress</p>
+      <label>
+      <textarea id="adress" name = "Adress" rows="5" cols="50"></textarea>
+      </label>
+    </div>
+    <div class="form-container">
+      <p>Height (in cm)</p>
+      <label>
+      <input type="number" id ="height" name = "Height">
+      </label>
+      <p>Weight (in kg)</p>
+      <label>
+      <input type="number" id = "weight" name = "Weight">
+      </label>
+      <button onclick="calculateBMI()">Calculate BMI</button>
+      <p id="result1"></p>
+      <script>
+        function calculateBMI() {
+          var weight = document.getElementById("weight").value; // get weight input value
+          var height = document.getElementById("height").value; // get height input value
+          var bmi = weight / ((height / 100) * (height / 100)); // calculate BMI using weight and height
+  
+          // Display the result
+          document.getElementById("result1").innerHTML = "Your BMI is " + bmi.toFixed(2);
+        }
+
+      </script>
+      <p>Hip (in cm)</p>
+      <label>
+      <input type="number" name = "Hip">
+      </label>
+      <p>Waist (in cm)</p>
+      <label>
+      <input type="number" name = "Waist">
+      </label>
+      <p>Temperature (in Fahrenheit)</p>
+      <label>
+      <input type="number" name = "Temperature">
+      </label>
+      <p>B.P. (in mm/Hg)</p>
+      <label>
+      <input type="number" name = "BP">
+      </label>
+      <p>Pulse (per minute)</p>
+      <label>
+      <input type="number" name = "Pulse">
+      </label>
+      <p>RR (per minute)</p>
+      <label>
+      <input type="number" name = "RR">
+      </label>
+    </div>
+    <div class="form-container">
         <form id="my-form" name="my-form" method= "POST" data-netlify="true" onsubmit= "submit">
+          <h2>Prakriti  Questionnaire</h2>
           <div class="question">
-            <p>Question 1: What is your favorite color?</p>
+            <p>Question 1: Body frame</p>
             <label>
-              <input type="radio" name="q1" value="red" data-category="Category 1">
-              Red
+              <input type="radio" name="q1" value="Lean long" data-category="Vatta">
+              Lean long
             </label>
             <label>
-              <input type="radio" name="q1" value="blue" data-category="Category 2">
-              Blue
+              <input type="radio" name="q1" value="Medium" data-category="Pitta">
+              Medium
             </label>
             <label>
-              <input type="radio" name="q1" value="green" data-category="Category 3">
-              Green
+              <input type="radio" name="q1" value="Large, plump, fleshy, fatty" data-category="Kapha">
+              Large, plump, fleshy, fatty
             </label>
           </div>
           <div class="question">
-            <p>Question 2: What is your favorite animal?</p>
+            <p>Question 2: SpeechSpeed</p>
             <label>
-              <input type="radio" name="q2" value="dog" data-category="Category 1">
-              Dog
+              <input type="radio" name="q2" value="Fast" data-category="Vatta">
+              Fast
             </label>
             <label>
-              <input type="radio" name="q2" value="cat" data-category="Category 2">
-              Cat
+              <input type="radio" name="q2" value="Fast" data-category="Pitta">
+              Fast
             </label>
             <label>
-              <input type="radio" name="q2" value="bird" data-category="Category 3">
-              Bird
+              <input type="radio" name="q2" value="Slow" data-category="Kapha">
+              Slow
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 3: Speech Clarity</p>
+            <label>
+              <input type="radio" name="q3" value="Diffuse words" data-category="Vatta">
+              Diffuse words
+            </label>
+            <label>
+              <input type="radio" name="q3" value="Clear" data-category="Pitta">
+              Clear
+            </label>
+            <label>
+              <input type="radio" name="q3" value="Clear" data-category="Kapha">
+              Clear
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 4: Eyes Colour- Sclera</p>
+            <label>
+              <input type="radio" name="q4" value="Blackish" data-category="Vatta">
+              Blackish
+            </label>
+            <label>
+              <input type="radio" name="q4" value="Reddish, brown" data-category="Pitta">
+              Reddish, brown
+            </label>
+            <label>
+              <input type="radio" name="q4" value="Milky white,Edges- reddish" data-category="Kapha">
+              Milky white,Edges- reddish
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 5: Lips Colour</p>
+            <label>
+              <input type="radio" name="q5" value="Blackish" data-category="Vatta">
+              Blackish
+            </label>
+            <label>
+              <input type="radio" name="q5" value="Reddish" data-category="Pitta">
+              Reddish
+            </label>
+            <label>
+              <input type="radio" name="q5" value="Pinkish" data-category="Kapha">
+              Pinkish
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 6: Nails Character</p>
+            <label>
+              <input type="radio" name="q6" value="Small, Cracking, breaking, rough, easily break" data-category="Vatta">
+              Small, Cracking, breaking, rough, easily break
+            </label>
+            <label>
+              <input type="radio" name="q6" value="Small, smooth &flat" data-category="Pitta">
+              Small, smooth &flat
+            </label>
+            <label>
+              <input type="radio" name="q6" value="Big, smooth, glossy" data-category="Kapha">
+              Big, smooth, glossy
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 7: Nails Colour</p>
+            <label>
+              <input type="radio" name="q7" value="Blackish" data-category="Vatta">
+              Blackish
+            </label>
+            <label>
+              <input type="radio" name="q7" value="Reddish" data-category="Pitta">
+              Reddish
+            </label>
+            <label>
+              <input type="radio" name="q7" value="Pinkish" data-category="Kapha">
+              Pinkish
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 8: Hair Texture</p>
+            <label>
+              <input type="radio" name="q8" value="Rough & Dry" data-category="Vatta">
+              Rough & Dry
+            </label>
+            <label>
+              <input type="radio" name="q8" value="Soft & Delicate" data-category="Pitta">
+              Soft & Delicate
+            </label>
+            <label>
+              <input type="radio" name="q8" value="Soft & Shiny" data-category="Kapha">
+              Soft & Shiny
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 9: Hair Colour</p>
+            <label>
+              <input type="radio" name="q9" value="Black" data-category="Vatta">
+              Black
+            </label>
+            <label>
+              <input type="radio" name="q9" value="Gray/ Brown" data-category="Pitta">
+              Gray/ Brown
+            </label>
+            <label>
+              <input type="radio" name="q9" value="Black" data-category="Kapha">
+              Black
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 10: Hair Thickness</p>
+            <label>
+              <input type="radio" name="q10" value="Less" data-category="Vatta">
+              Less
+            </label>
+            <label>
+              <input type="radio" name="q10" value="Medium" data-category="Pitta">
+              Medium
+            </label>
+            <label>
+              <input type="radio" name="q10" value="More" data-category="Kapha">
+              More
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 11: Skin Character</p>
+            <label>
+              <input type="radio" name="q11" value="Cracking, rough" data-category="Vatta">
+              Cracking, rough
+            </label>
+            <label>
+              <input type="radio" name="q11" value="Soft, oily, with moles, pimples, freckles" data-category="Pitta">
+              Soft, oily, with moles, pimples, freckles
+            </label>
+            <label>
+              <input type="radio" name="q11" value="Smooth, glossy" data-category="Kapha">
+              Smooth, glossy
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 12: Skin Colour</p>
+            <label>
+              <input type="radio" name="q12" value="Blackish tinge" data-category="Vatta">
+              Blackish tinge
+            </label>
+            <label>
+              <input type="radio" name="q12" value="Yellowish tinge" data-category="Pitta">
+              Yellowish tinge
+            </label>
+            <label>
+              <input type="radio" name="q12" value="Fair, pinkish" data-category="Kapha">
+              Fair, pinkish
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 13: Skin Temperature</p>
+            <label>
+              <input type="radio" name="q13" value="Cold" data-category="Vatta" data-category="Kapha">
+              Cold
+            </label>
+            <label>
+              <input type="radio" name="q13" value="Warm" data-category="Pitta">
+              Warm
+            </label>
+            <label>
+              <input type="radio" name="q13" value="Cold" data-category="Kapha">
+              Cold
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 14: Body odor</p>
+            <label>
+              <input type="radio" name="q14" value="Absent" data-category="Vatta">
+              Absent
+            </label>
+            <label>
+              <input type="radio" name="q14" value="Present" data-category="Pitta">
+              Present
+            </label>
+            <label>
+              <input type="radio" name="q14" value="Absent" data-category="Kapha">
+              Absent
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 15: Appetite : Frequency of and eating Quantity at meal</p>
+            <label>
+              <input type="radio" name="q15" value="More and Less" data-category="Vatta">
+              More and Less
+            </label>
+            <label>
+              <input type="radio" name="q15" value="More and More" data-category="Pitta">
+              More and More
+            </label>
+            <label>
+              <input type="radio" name="q15" value="Less and More" data-category="Kapha">
+              Less and More
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 16: Appetite : If meal is skipped/ meal timings are changed/ style of food is changed</p>
+            <label>
+              <input type="radio" name="q16" value="Constipation" data-category="Vatta">
+              Constipation
+            </label>
+            <label>
+              <input type="radio" name="q16" value="Headache/vomiting" data-category="Pitta">
+              Headache/vomiting
+            </label>
+            <label>
+              <input type="radio" name="q16" value="Nothing special" data-category="Kapha">
+              Nothing special
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 17: Thirst</p>
+            <label>
+              <input type="radio" name="q17" value="Irregular" data-category="Vatta" >
+              Irregular
+            </label>
+            <label>
+              <input type="radio" name="q17" value="More" data-category="Pitta">
+              More
+            </label>
+            <label>
+              <input type="radio" name="q17" value="Less" data-category="Kapha">
+              Less
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 18: Stool Habit</p>
+            <label>
+              <input type="radio" name="q18" value="Irregular" data-category="Vatta">
+              Irregular
+            </label>
+            <label>
+              <input type="radio" name="q18" value="Regular" data-category="Pitta">
+              Regular
+            </label>
+            <label>
+              <input type="radio" name="q18" value="Regular" data-category="Kapha">
+              Regular
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 19: Stool Consistency</p>
+            <label>
+              <input type="radio" name="q19" value="Hard" data-category="Vatta">
+              Hard
+            </label>
+            <label>
+              <input type="radio" name="q19" value="Semi-solid" data-category="Pitta">
+              Semi-solid
+            </label>
+            <label>
+              <input type="radio" name="q19" value="Well-formed" data-category="Kapha">
+              Well-formed
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 20: Stool Colour</p>
+            <label>
+              <input type="radio" name="q20" value="Blackish" data-category="Vatta">
+              Blackish
+            </label>
+            <label>
+              <input type="radio" name="q20" value="Yellowish" data-category="Pitta">
+              Yellowish
+            </label>
+            <label>
+              <input type="radio" name="q20" value="Yellowish" data-category="Kapha">
+              Yellowish
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 21: Sleep Character</p>
+            <label>
+              <input type="radio" name="q21" value="Interrupted, less" data-category="Vatta">
+              Interrupted, less
+            </label>
+            <label>
+              <input type="radio" name="q21" value="Uninterrupted, less" data-category="Pitta">
+              Uninterrupted, less
+            </label>
+            <label>
+              <input type="radio" name="q21" value="Sound, profound" data-category="Kapha">
+              Sound, profound
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 22: Sleep Duration</p>
+            <label>
+              <input type="radio" name="q22" value="6 hours" data-category="Vatta">
+              6 hours
+            </label>
+            <label>
+              <input type="radio" name="q22" value="6-8 hours" data-category="Pitta">
+              6-8 hours
+            </label>
+            <label>
+              <input type="radio" name="q22" value="8 hours or more than 8 hours" data-category="Kapha">
+              8 hours or more than 8 hours
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 23: Excitement</p>
+            <label>
+              <input type="radio" name="q23" value="Quickly, cools down quickly" data-category="Vatta">
+              Quickly, cools down quickly
+            </label>
+            <label>
+              <input type="radio" name="q23" value="Quickly, does not cool down quickly" data-category="Pitta">
+              Quickly, does not cool down quickly
+            </label>
+            <label>
+              <input type="radio" name="q23" value="Rarely" data-category="Kapha">
+              Rarely
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 24: Working style</p>
+            <label>
+              <input type="radio" name="q24" value="Quickly" data-category="Vatta">
+              Quickly
+            </label>
+            <label>
+              <input type="radio" name="q24" value="Medium" data-category="Pitta">
+              Medium
+            </label>
+            <label>
+              <input type="radio" name="q24" value="Slowly" data-category="Kapha">
+              Slowly
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 25: Other movements</p>
+            <label>
+              <input type="radio" name="q25" value="Fast, unnecessary" data-category="Vatta" >
+              Fast, unnecessary
+            </label>
+            <label>
+              <input type="radio" name="q25" value="Fast, precise" data-category="Pitta">
+              Fast, precise
+            </label>
+            <label>
+              <input type="radio" name="q25" value="Slow steady" data-category="Kapha">
+              Slow steady	
+            </label>
+          </div>
+          <div class="question">
+            <p>Question 26: Concentration on work/Study</p>
+            <label>
+              <input type="radio" name="q26" value="Lack of concentration" data-category="Vatta">
+              Lack of concentration
+            </label>
+            <label>
+              <input type="radio" name="q26" value="Can concentrate on the things of interest" data-category="Pitta">
+              Can concentrate on the things of interest
+            </label>
+            <label>
+              <input type="radio" name="q26" value="Can easily concentrate" data-category="Kapha">
+              Can easily concentrate	
             </label>
           </div>
           <div id="result"></div>
@@ -57,9 +507,9 @@
 
             // Count the number of selected options for each category
             const categoryCounts = {
-              'Category 1': 0,
-              'Category 2': 0,
-              'Category 3': 0
+              'Vatta': 0,
+              'Pitta': 0,
+              'Kapha': 0
             };
             selectedOptions.forEach(selectedOption => {
               const optionCategory = selectedOption.getAttribute('data-category');
@@ -68,7 +518,7 @@
 
             // Update the result display with the category counts
             const resultElement = document.getElementById('result');
-            resultElement.innerHTML = `Category 1: ${categoryCounts['Category 1']} | Category 2: ${categoryCounts['Category 2']} | Category 3: ${categoryCounts['Category 3']}`;
+            resultElement.innerHTML = `Vatta: ${categoryCounts['Vatta']} | Pitta: ${categoryCounts['Pitta']} | Kapha: ${categoryCounts['Kapha']}`;
           });
         });
 
