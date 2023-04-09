@@ -27,3 +27,6 @@ input[type=radio] {
   margin-top: 20px;
   font-weight: bold;
 }
+.header-image {
+  background-image: url(“Health_assesment.jpeg”);
+  }
