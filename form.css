@@ -28,9 +28,9 @@ input[type=radio] {
   font-weight: bold;
 }
 .header{
-  width: 50%;
-  height: 50vh;
-  padding: 10 10%;
+  width: auto;
+  height: auto;
+  padding: auto;
   inline-size: auto;
 
 }
