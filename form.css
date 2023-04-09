@@ -30,7 +30,7 @@ input[type=radio] {
 .header{
   width: 50%;
   height: 50vh;
-  padding: 0 10%;
+  padding: 10 10%;
   inline-size: auto;
 
 }
