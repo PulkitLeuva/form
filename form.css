@@ -28,6 +28,6 @@ input[type=radio] {
   font-weight: bold;
 }
 .header{
-  height: auto;
-  width: auto;
+  height: 200px;
+  width: 200px;
 }
