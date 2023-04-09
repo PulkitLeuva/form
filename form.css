@@ -32,5 +32,5 @@ input[type=radio] {
   height: fit-content;
   padding: auto;
   position: relative;
-
+  align-items: center;
 }
