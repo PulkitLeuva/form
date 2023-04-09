@@ -28,5 +28,5 @@ input[type=radio] {
   font-weight: bold;
 }
 .header{
-  height: 100px;
+  height: auto;
 }
