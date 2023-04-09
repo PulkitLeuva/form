@@ -11,6 +11,7 @@
       <h1>Health Assessments and Prakriti Questionnaire</h1> 
         <form id="my-form" name="my-form" method= "POST" data-netlify="true" onsubmit= "submit">
           <div class = "form-container">
+            <h2>Basic Information</h2>
             <label for="name">Name</label>
             <input type="text" class="form-control" id = "name" name="Name"><br>
             <p>Sex</p>
@@ -52,6 +53,7 @@
             </label>
           </div>
           <div class="form-container">
+            <h2>Health Assessment</h2>
             <label for="weight">Weight (in kg):</label>
 		          <input type="number" id="weight" name="weight" onchange="calculateBMI()" step="0.01">
 		            <br>
@@ -72,14 +74,26 @@
 			          }
 		          }
 	          </script>
-            <p>Hip (in cm)</p>
-            <label>
-            <input type="number" name = "Hip">
-            </label>
-            <p>Waist (in cm)</p>
-            <label>
-            <input type="number" name = "Waist">
-            </label>
+            <label for="Hip">Hip (in cm):</label>
+            <input type="number" id="hip" name="hip" onchange="calculateHWR()" step="0.01">
+              <br>
+          <label for="waist">Waist (in cm):</label>
+            <input type="number" id="waist" name="waist" onchange="calculateHWR()" step="0.01">
+          
+          <p id="result2"></p>
+          <script>
+            function calculateHWR() {
+              let hip = parseFloat(document.getElementById("hip").value);
+              let waist = parseFloat(document.getElementById("waist").value);
+
+              if (!isNaN(hip) && !isNaN(waist) && waist > 0) {
+                let HWR = hip / waist;
+                document.getElementById("result2").innerHTML = "Your Hip Waist Ratio is " + HWR.toFixed(2);
+              } else {
+                document.getElementById("result2").innerHTML = "";
+              }
+            }
+          </script>
             <p>Temperature (in Fahrenheit)</p>
             <label>
             <input type="number" name = "Temperature">
