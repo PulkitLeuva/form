@@ -28,9 +28,6 @@ input[type=radio] {
   font-weight: bold;
 }
 .header{
-  width: fit-content;
-  height: fit-content;
-  padding: auto;
-  position: relative;
-  align-items: center;
+  left: 50%;
+  right: 50%;
 }
