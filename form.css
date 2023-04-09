@@ -31,4 +31,5 @@ input[type=radio] {
   position: absolute;
   left: 50%;
   right: 50%;
+  top: auto;
 }
