@@ -19,15 +19,17 @@
     <div class="form-container">
       <div class="header">
         
-        <img src="Health_assesment.jpg" alt="" , class=" header">
+        <img src="Health_assesment.jpeg" alt="" , class=" header">
         
     
       </div>
         <form id="my-form" name="my-form" method= "POST" data-netlify="true" onsubmit= "submit">
           <div class = "form-container">
             <h2>Basic Information</h2>
-            <label for="name">Name</label>
-            <input type="text" class="form-control" id = "name" name="Name"><br>
+            <label for="first name"> First Name</label>
+            <input type="text" class="form-control" id = "first name" name="First Name">
+            <label for="last name"> Last Name</label>
+            <input type="text" class="form-control" id = "last name" name="Last Name"><br>
             <p>Sex</p>
             <label>
               <input type="radio" name = "male" value="Male">
@@ -39,7 +41,7 @@
             </label>
             <p>Birth Date (DD/MM/YYYY)</p>
             <label>
-              <input type="text" name = "Birthdate">
+              <input type="date" name = "Birthdate">
             </label>
             <p>Age (in years)</p>
               <label>
@@ -49,21 +51,13 @@
             <label>
             <input type="text" name = "Department Name">
               </label>
-            <p>Year</p>
-            <label>
-              <input type="text" name = "Year">
-            </label>
             <p>Mobile Number</p>
             <label>
-              <input type="text" name = "Mobile Number">
+              <input type="tel" name = "Mobile Number" >
             </label>
             <p>Email ID</p>
             <label>
-              <input type="text" name = "Email ID">
-            </label>
-            <p>Adress</p>
-            <label>
-              <textarea id="adress" name = "Adress" rows="5" cols="50"></textarea>
+              <input type="email" name = "Email ID">
             </label>
           </div>
           <div class="form-container">
@@ -114,7 +108,7 @@
             </label>
             <p>B.P. (in mm/Hg)</p>
             <label>
-            <input type="number" name = "BP">
+            <input type="text" name = "BP">
             </label>
             <p>Pulse (per minute)</p>
             <label>
@@ -145,11 +139,7 @@
           <div class="question">
             <p>Question 2: SpeechSpeed</p>
             <label>
-              <input type="radio" name="q2" value="Fast" data-category="Vatta">
-              Fast
-            </label>
-            <label>
-              <input type="radio" name="q2" value="Fast" data-category="Pitta">
+              <input type="radio" name="q2" value="Fast" data-category="Vatta,Pitta">
               Fast
             </label>
             <label>
@@ -164,11 +154,7 @@
               Diffuse words
             </label>
             <label>
-              <input type="radio" name="q3" value="Clear" data-category="Pitta">
-              Clear
-            </label>
-            <label>
-              <input type="radio" name="q3" value="Clear" data-category="Kapha">
+              <input type="radio" name="q3" value="Clear" data-category="Pitta,Kapha">
               Clear
             </label>
           </div>
@@ -250,16 +236,12 @@
           <div class="question">
             <p>Question 9: Hair Colour</p>
             <label>
-              <input type="radio" name="q9" value="Black" data-category="Vatta">
+              <input type="radio" name="q9" value="Black" data-category="Vatta,Kapha">
               Black
             </label>
             <label>
               <input type="radio" name="q9" value="Gray/ Brown" data-category="Pitta">
               Gray/ Brown
-            </label>
-            <label>
-              <input type="radio" name="q9" value="Black" data-category="Kapha">
-              Black
             </label>
           </div>
           <div class="question">
@@ -310,31 +292,23 @@
           <div class="question">
             <p>Question 13: Skin Temperature</p>
             <label>
-              <input type="radio" name="q13" value="Cold" data-category="Vatta" data-category="Kapha">
+              <input type="radio" name="q13" value="Cold" data-category="Vatta,Kapha">
               Cold
             </label>
             <label>
               <input type="radio" name="q13" value="Warm" data-category="Pitta">
               Warm
             </label>
-            <label>
-              <input type="radio" name="q13" value="Cold" data-category="Kapha">
-              Cold
-            </label>
           </div>
           <div class="question">
             <p>Question 14: Body odor</p>
             <label>
-              <input type="radio" name="q14" value="Absent" data-category="Vatta">
+              <input type="radio" name="q14" value="Absent" data-category="Vatta,Kapha">
               Absent
             </label>
             <label>
               <input type="radio" name="q14" value="Present" data-category="Pitta">
               Present
-            </label>
-            <label>
-              <input type="radio" name="q14" value="Absent" data-category="Kapha">
-              Absent
             </label>
           </div>
           <div class="question">
@@ -389,11 +363,7 @@
               Irregular
             </label>
             <label>
-              <input type="radio" name="q18" value="Regular" data-category="Pitta">
-              Regular
-            </label>
-            <label>
-              <input type="radio" name="q18" value="Regular" data-category="Kapha">
+              <input type="radio" name="q18" value="Regular" data-category="Pitta,Kapha">
               Regular
             </label>
           </div>
@@ -419,11 +389,7 @@
               Blackish
             </label>
             <label>
-              <input type="radio" name="q20" value="Yellowish" data-category="Pitta">
-              Yellowish
-            </label>
-            <label>
-              <input type="radio" name="q20" value="Yellowish" data-category="Kapha">
+              <input type="radio" name="q20" value="Yellowish" data-category="Pitta,Kapha">
               Yellowish
             </label>
           </div>
@@ -524,35 +490,42 @@
       </div>
       <script>
         // Get all radio buttons in the form
-        const radioButtons = document.querySelectorAll('input[type=radio]');
-
-        // Add event listener to each radio button
-        radioButtons.forEach(radioButton => {
-          radioButton.addEventListener('change', () => {
-            // Get the category of the selected option
-            const category = radioButton.getAttribute('data-category');
-
-            // Get all selected options in the form
-            const selectedOptions = document.querySelectorAll('input[type=radio]:checked');
-
-            // Count the number of selected options for each category
-            const categoryCounts = {
-              'Vatta': 0,
-              'Pitta': 0,
-              'Kapha': 0
-            };
-            selectedOptions.forEach(selectedOption => {
-              const optionCategory = selectedOption.getAttribute('data-category');
-              categoryCounts[optionCategory]++;
-            });
-
-            // Update the result display with the category counts
-            const resultElement = document.getElementById('result');
-            resultElement.innerHTML = `Vatta: ${categoryCounts['Vatta']} | Pitta: ${categoryCounts['Pitta']} | Kapha: ${categoryCounts['Kapha']}`;
+    const radioButtons = document.querySelectorAll('input[type=radio]');
+    
+    // Add event listener to each radio button
+    radioButtons.forEach(radioButton => {
+      radioButton.addEventListener('change', () => {
+        // Get the category of the selected option
+        const category = radioButton.getAttribute('data-category');
+    
+        // Get all selected options in the form
+        const selectedOptions = document.querySelectorAll('input[type=radio]:checked');
+    
+        // Select other options with the same value as the selected option
+        selectedOptions.forEach(selectedOption => {
+          if (selectedOption !== radioButton && selectedOption.value === radioButton.value) {
+            selectedOption.checked = true;
+          }
+        });
+    
+        // Count the number of selected options for each category
+        const categoryCounts = {
+          'Vatta': 0,
+          'Pitta': 0,
+          'Kapha': 0
+        };
+        selectedOptions.forEach(selectedOption => {
+          selectedOption.getAttribute('data-category').split(',').forEach(cat => {
+            categoryCounts[cat]++;
           });
         });
-
-
-      </script>
+    
+        // Update the result display with the category counts
+        const resultElement = document.getElementById('result');
+        resultElement.innerHTML = `Vatta: ${categoryCounts['Vatta']} | Pitta: ${categoryCounts['Pitta']} | Kapha: ${categoryCounts['Kapha']}`;
+      });
+    });
+    
+    </script>  
 </body>
 </html>
