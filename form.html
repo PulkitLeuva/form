@@ -14,17 +14,17 @@
     }
   </style>
 </head>
-<body>
+<body >
 
-    <div class="form-container">
+    <div class="form-container" style="background-color:#D0FFFE;">
       <div class="header">
         
-        <img src="Health_assesment.jpg" alt="" , class=" header">
+        <img src="Health_assesment.jpeg" alt="" , class=" header">
         
     
       </div>
         <form id="my-form" name="my-form" method= "POST" data-netlify="true" onsubmit= "submit">
-          <div class = "form-container">
+          <div class = "form-container" style="background-color:#95DBDF;">
             <h2>Basic Information</h2>
             <label for="first name"> First Name</label>
             <input type="text" class="form-control" id = "first name" name="First Name">
@@ -45,7 +45,7 @@
             </label>
             <p>Age (in years)</p>
               <label>
-            <input type="text" name = "Age">
+            <input type="number" name = "Age">
             </label>
               <p>Department Name</p>
             <label>
@@ -59,8 +59,12 @@
             <label>
               <input type="email" name = "Email ID">
             </label>
+            <p>Enter your Unique ID</p>
+            <label>
+          <input type="number" name = "UniqueID">
+          </label>
           </div>
-          <div class="form-container">
+          <div class="form-container"  style="background-color:#95DBDF;">
             <h2>Health Assessment</h2>
             <label for="weight">Weight (in kg):</label>
 		          <input type="number" id="weight" name="weight" onchange="calculateBMI()" step="0.01">
@@ -118,8 +122,20 @@
             <label>
             <input type="number" name = "RR">
             </label>
+            <p>Body Fat</p>
+            <label>
+            <input type="number" name = "Body Fat">
+            </label>
+            <p>Visceral Fat</p>
+            <label>
+            <input type="number" name = "Visceral Fat">
+            </label>
+            <p>Skeletal Muscle</p>
+            <label>
+            <input type="number" name = "Skeletal Muscle">
+            </label>
           </div>
-        <div class = "form-container">
+        <div class = "form-container"  style="background-color:#95DBDF;">
           <h2>Prakriti  Questionnaire</h2>
           <div class="question">
             <p>Question 1: Body frame</p>
@@ -484,6 +500,16 @@
             </label>
           </div>
           <div id="result"></div>
+          <label for="membership">Prakruti:</label>
+          <select name="membership" id="membership">
+            <option value="Vitta">Vatta</option>
+            <option value="Pitta">Pitta</option>
+            <option value="Kapha" selected>Kapha</option>
+            <option value="Vata Dominant Pitta">Vatta Dominant Pitta</option>
+            <option value="Pitta Dominant Kapha">Pitta Dominant Kapha</option>
+            <option value="Kapha Dominant Vatta">Kapha Dominant Vatta</option>
+            <option value="Vata Pitta Kapha">Vatta Pitta Kapha</option>
+          </select>   
         </div>  
           <button type="submit">Submit</button>
         </form>
